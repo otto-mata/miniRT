@@ -6,7 +6,7 @@
 /*   By: tblochet <tblochet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 01:10:54 by tblochet          #+#    #+#             */
-/*   Updated: 2024/12/01 05:17:25 by tblochet         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:48:54 by tblochet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	draw(t_data *img, t_scene *scene)
 		j = 0;
 		while (j < scene->height)
 		{
-			printf("{%d, %d}\n",i, j);
 			u = vec3_mult_scalar(scene->camera->viewport->pxl_d_u, i);
 			vec3_ip_add(u, scene->camera->viewport->p00);
 			pixel_center = vec3_mult_scalar(scene->camera->viewport->pxl_d_v,
@@ -81,7 +80,7 @@ int	main(void)
 {
 	t_scene	*scene;
 
-	scene = scene_new(1, 400, 1.0, 2.0);
+	scene = scene_new(1.0, 340, 0.8, 2.0);
 	mlx_setup(scene);
 	return (0);
 }

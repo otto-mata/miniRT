@@ -6,7 +6,7 @@
 /*   By: tblochet <tblochet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 01:30:51 by tblochet          #+#    #+#             */
-/*   Updated: 2024/12/01 04:01:50 by tblochet         ###   ########.fr       */
+/*   Updated: 2024/12/04 17:25:50 by tblochet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ double					vec3_dot(t_vec3 *u, t_vec3 *v);
 t_vec3					*vec3_cross(t_vec3 *u, t_vec3 *v);
 t_vec3					*vec3_copy(t_vec3 *v);
 t_vec3					*vec3_unit(t_vec3 *v);
+
+float					fisqrt(float number);
 #endif
