@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tblochet <tblochet@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 01:10:54 by tblochet          #+#    #+#             */
-/*   Updated: 2024/12/04 17:48:54 by tblochet         ###   ########.fr       */
+/*                                                                            */
+/*   main.c                                               ┌─┐┌┬┐┌┬┐┌─┐        */
+/*                                                        │ │ │  │ │ │        */
+/*   By: tblochet <tblochet@student.42.fr>                └─┘ ┴  ┴ └─┘        */
+/*                                                        ┌┬┐┌─┐┌┬┐┌─┐        */
+/*   Created: 2024/12/01 01:10:54 by tblochet             │││├─┤ │ ├─┤        */
+/*   Updated: 2025/01/05 23:44:37 by tblochet             ┴ ┴┴ ┴ ┴ ┴ ┴        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	draw(t_data *img, t_scene *scene)
 		}
 		i++;
 	}
+	// exit(0);
 }
 
 void	mlx_setup(t_scene *scene)
@@ -80,7 +81,7 @@ int	main(void)
 {
 	t_scene	*scene;
 
-	scene = scene_new(1.0, 340, 0.8, 2.0);
+	scene = scene_new(16.0 / 9.0, 1366, 0.8, 2.0);
 	mlx_setup(scene);
 	return (0);
 }

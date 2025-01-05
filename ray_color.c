@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ray_color.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tblochet <tblochet@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 04:00:08 by tblochet          #+#    #+#             */
-/*   Updated: 2024/12/04 17:47:55 by tblochet         ###   ########.fr       */
+/*                                                                            */
+/*   ray_color.c                                          ┌─┐┌┬┐┌┬┐┌─┐        */
+/*                                                        │ │ │  │ │ │        */
+/*   By: tblochet <tblochet@student.42.fr>                └─┘ ┴  ┴ └─┘        */
+/*                                                        ┌┬┐┌─┐┌┬┐┌─┐        */
+/*   Created: 2024/12/01 04:00:08 by tblochet             │││├─┤ │ ├─┤        */
+/*   Updated: 2025/01/05 23:55:41 by tblochet             ┴ ┴┴ ┴ ┴ ┴ ┴        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,22 @@ uint64_t	ray_color(t_ray *ray)
 	double		a;
 	double		t;
 
-	t = hit_sphere(vec3_new(0, 0, -1), 0.5, ray);
-	if (t > 0.0)
-	{
-		v = vec3_unit(vec3_sub(ray_at(ray, t), vec3_new(0, 0, -1)));
-		vec3_ip_add(v, vec3_new(1, 1, 1));
-		return (vec3_color(v));
-	}
-	unit_dir = vec3_unit(ray->direction);
+	// printf("v: %.f, %.f, %.f\n", v->x, v->y, v->z);
+	// printf("ray->org: %.f, %.f, %.f\n", ray->origin->x, ray->origin->y,
+	//		ray->origin->z);
+	// t = hit_sphere(vec3_new(0, 0, -1), 0.5, ray);
+	// if (t > 0.0)
+	// {
+	// 	// v = vec3_new(1, 0, 0);
+	// 	v = ray_at(ray, t);
+	// 	printf("%.6f, %.6f, %.6f, len: %.6f\n", v->x, v->y, v->z, vec3_len(v));
+	// 	vec3_ip_sub(v, vec3_new(0.5,0.5,-1));
+	// 	// vec3_ip_add(v, vec3_new(1.5, 1.5, 0));
+	// 	return (vec3_color(v));
+	// }
+	unit_dir = ray->direction;
+	printf("x: % 10.6f, y: % 10.6f \n",unit_dir->x, unit_dir->y);
+	return(vec3_color(unit_dir));
 	if (!unit_dir)
 		return (0);
 	a = 0.5 * (unit_dir->y + 1.0);

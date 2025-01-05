@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   camera_new.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tblochet <tblochet@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 02:56:03 by tblochet          #+#    #+#             */
-/*   Updated: 2024/12/04 17:15:24 by tblochet         ###   ########.fr       */
+/*                                                                            */
+/*   camera_new.c                                         ┌─┐┌┬┐┌┬┐┌─┐        */
+/*                                                        │ │ │  │ │ │        */
+/*   By: tblochet <tblochet@student.42.fr>                └─┘ ┴  ┴ └─┘        */
+/*                                                        ┌┬┐┌─┐┌┬┐┌─┐        */
+/*   Created: 2024/12/01 02:56:03 by tblochet             │││├─┤ │ ├─┤        */
+/*   Updated: 2025/01/05 23:22:20 by tblochet             ┴ ┴┴ ┴ ┴ ┴ ┴        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_camera	*camera_new(double view_width, double view_height,
 {
 	t_camera	*cam;
 
-	cam = malloc(sizeof(t_camera));
+	cam = calloc(1, sizeof(t_camera));
 	if (!cam)
 		return (0);
 	cam->center = calloc(1, sizeof(t_point3));
