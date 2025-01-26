@@ -1,0 +1,101 @@
+# smol markup for RT
+# syntax:
+#  ^<name>
+#		denotes a metatype followed directly by its name
+#		attributes:
+#			- type: the type of the value(s)
+#			- n: number of value(s)
+#			- hi?: max value for each value
+#			- lo?: min value for each value
+#			- sep?: separator used to distinguish values. if n > 1, sep must be set.
+#
+#  %<name>
+#		denotes a data structure
+#		attributes:
+#			- id: string marking the start of the structure
+#			- params: number of values excpected
+#			- params_type: types or metatypes for each value in the declaration.
+#			Those types or metatypes must be indicated in the expected order.
+
+^lighting
+{
+	type=double;
+	n=1;
+	hi=1.0;
+	lo=0.0;
+}
+
+^col
+{
+	type=int
+	n=3;
+	sep=,;
+	hi=255;
+	lo=255;
+}	
+
+^vec
+{
+	type=double;
+	n=3;
+	sep=,;
+}
+
+^norm
+{
+	type=double;
+	n=3;
+	sep=,;
+	hi=1.0;
+	lo=-1.0;
+}
+
+^fov
+{
+	type=int;
+	n=1;
+	hi=180;
+	lo=0;
+}
+
+%ambient
+{
+	id=A;
+	params=2;
+	params_type=lighting,col;
+}
+
+%camera
+{
+	id=C;
+	params=3;
+	params_type=vec,norm,fov;
+}
+
+%light
+{
+	id=L;
+	params=3;
+	params_type=vec,lighting,col;
+}
+
+%sphere
+{
+	id=sp;
+	params=3;
+	params_type=vec,double,col;
+}
+
+%plane
+{
+	id=pl;
+	params=3
+	params_type=vec,norm,col
+}
+
+%cylinder
+{
+	id=cy;
+	params=5;
+	params_type=vec,norm,double,double,col;
+}
