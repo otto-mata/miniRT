@@ -17,85 +17,85 @@
 #			- params_type: types or metatypes for each value in the declaration.
 #			Those types or metatypes must be indicated in the expected order.
 
-^lighting
+^brightness
 {
-	type=double;
-	n=1;
-	hi=1.0;
-	lo=0.0;
+	type=double
+	n=1
+	hi=1.0
+	lo=0.0
 }
 
-^col
+^color
 {
 	type=int
-	n=3;
-	sep=,;
-	hi=255;
-	lo=255;
+	n=3
+	sep=,
+	hi=255
+	lo=0
 }	
 
-^vec
+^vector
 {
-	type=double;
-	n=3;
-	sep=,;
+	type=double
+	n=3
+	sep=,
 }
 
-^norm
+^normal_vector
 {
-	type=double;
-	n=3;
-	sep=,;
-	hi=1.0;
-	lo=-1.0;
+	type=double
+	n=3
+	sep=,
+	hi=1.0
+	lo=-1.0
 }
 
 ^fov
 {
-	type=int;
-	n=1;
-	hi=180;
-	lo=0;
+	type=int
+	n=1
+	hi=180
+	lo=0
 }
 
 %ambient
 {
-	id=A;
-	params=2;
-	params_type=lighting,col;
+	id=A
+	params=2
+	params_type=brightness,color
 }
 
 %camera
 {
-	id=C;
-	params=3;
-	params_type=vec,norm,fov;
+	id=C
+	params=3
+	params_type=vector,normal_vector,fov
 }
 
 %light
 {
-	id=L;
-	params=3;
-	params_type=vec,lighting,col;
+	id=L
+	params=3
+	params_type=vector,brightness,color
 }
 
 %sphere
 {
-	id=sp;
-	params=3;
-	params_type=vec,double,col;
+	id=sp
+	params=3
+	params_type=vector,double,color
 }
 
 %plane
 {
-	id=pl;
+	id=pl
 	params=3
-	params_type=vec,norm,col
+	params_type=vector,normal_vector,color
 }
 
 %cylinder
 {
-	id=cy;
-	params=5;
-	params_type=vec,norm,double,double,col;
+	id=cy
+	params=5
+	params_type=vector,normal_vector,double,double,color
 }
